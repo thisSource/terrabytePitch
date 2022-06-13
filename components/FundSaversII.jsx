@@ -71,14 +71,14 @@ function FundSavers(props) {
 
         if (isOn === true) {
           p5.strokeWeight(0.2);
-          p5.line(i * lineWidth, stats[i] + 600, p5.mouseX, p5.mouseY);
+          p5.line(i * lineWidth, stats[i] + 1000, p5.mouseX, p5.mouseY);
           p5.ellipse(p5.mouseX, p5.mouseY,10)
         } else {
           p5.strokeWeight(1);
-          p5.line(i * lineWidth, stats[i] + 600, (i + 5) * lineWidth, stats[i + 5] + 600);
+          p5.line(i * lineWidth, stats[i] + 1000, (i + 10) * lineWidth, stats[i + 10] + 1000);
         }
       p5.strokeWeight(2);
-      p5.ellipse(i * lineWidth, stats[i] + 600, 10);
+      p5.ellipse(i * lineWidth, stats[i] + 1000, 10);
     }
     p5.fill(255);
 

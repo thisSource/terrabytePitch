@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
   ssr: false
 });
-function GridDataB(props) {
+function GridDataFloater(props) {
   // Will only render on client-side
 
   let xPos;
@@ -44,7 +44,7 @@ function GridDataB(props) {
 
       for (let j = 0; j < rowsA; j++) {
         if(bool === true){
-          p5.fill(255 - j*20, 170 + j, 250 - j)
+          p5.fill(255 - j*20, 170 + j*p5.random(10), 250 - j)
         } else{
           p5.fill(255)
         }
@@ -54,14 +54,35 @@ function GridDataB(props) {
     p5.pop();
   };
 
+  function showSurf(p5, level) {
+    // p5.fill(0, 0, 255, 20);
+    p5.noFill()
+    p5.strokeWeight(3)
   
+    p5.beginShape();
+    let xOff = 0;
+    for (let x = 670; x <= 970; x += 15) {
+
+      p5.stroke(10, 120, 250);
+
+      let y = p5.map(p5.noise(xOff, yOff), 0, 1, 70, 150);
+      p5.vertex(x, y);
+      // Increment x dimension for noise
+      xOff += 0.01 + level;
+    }
+    // increment y dimension for noise
+    yOff += 0.01;
+  
+  
+    p5.endShape();
+  }
 
   const draw = (p5) => {
-    p5.background(255, 255, 255 );
-    p5.stroke(100, 100, 255);
+    p5.background(255, 255, 255);
+    p5.stroke(100, 200, 255);
     p5.fill(230);
     grid(p5, 16, 20, 20, false);
-    grid(p5, 16, 8, 20, true);
+    showSurf(p5, 0.05)
     //   p5.rect(xPos + i, yPos + j, 20, 20);
   };
 
@@ -72,4 +93,4 @@ function GridDataB(props) {
   );
 }
 
-export default GridDataB;
+export default GridDataFloater;

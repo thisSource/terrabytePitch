@@ -22,7 +22,7 @@ function GridData(props) {
 
   const grid = (p5, colsA, rowsA, lengthA) =>{
     p5.stroke(0);
-    p5.strokeWeight(0.4);
+    p5.strokeWeight(0.2);
     // p5.noFill();
     xPos = p5.width/2 - colsA/2  * lengthA 
     yPos = p5.height/2 - rowsA * lengthA

@@ -6,6 +6,7 @@ import GridDataC from "../components/GridData copy";
 import OceanData from "../components/OceanData";
 import GridDataB from "../components/GridDataB";
 import BouncingBalls from "../components/BouncingBalls";
+import GridDataFloater from "../components/GridDataFloater";
 
 
 const Home = (props) => {
@@ -15,11 +16,11 @@ const Home = (props) => {
       <Header />
       <TerraTitle />
       <FundSavers />
-      <div className="my-80 grid grid-cols-3">
+      {/* <div className="my-80 grid grid-cols-3">
       <GridData />
       <GridDataB />
-      </div>
-      <GridDataC />
+      </div> */}
+      <GridDataFloater />
       <OceanData />
     </div>
   );

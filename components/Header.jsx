@@ -1,7 +1,6 @@
 function Header() {
-  return <div className="my-8 ml-10 text-neutral-500 font-bold font-mono">
-      terrabyte
-  </div>;
+  return <div className="my-8 ml-10 text-base font-sans font-extrabold italic text-gray-200">
+  </div>; 
 }
 
 export default Header
