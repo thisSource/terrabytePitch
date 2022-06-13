@@ -10,17 +10,24 @@ function GridDataB(props) {
 
   let xPos;
   let yPos;
+
+  let gridLength = 20
+  let orgWidth = 1670
+  let widthAdjustor;
+
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     xPos = p5.width / 2;
     yPos = p5.height / 2;
+    widthAdjustor = p5.windowWidth / orgWidth
+    gridLength = gridLength * widthAdjustor
   };
 
   const grid = (p5, colsA, rowsA, lengthA, bool) => {
     p5.stroke(0);
     p5.strokeWeight(0.4);
     // p5.noFill();
-    xPos = p5.width / 1.8 - colsA * lengthA;
+    xPos = p5.width / 2 - colsA/2 * lengthA;
     yPos = p5.height / 2 - rowsA * lengthA;
 
     p5.push();
@@ -29,7 +36,7 @@ function GridDataB(props) {
 
       for (let j = 0; j < rowsA; j++) {
         if(bool === true){
-          p5.fill(255 - j*20, 170 + j*10, 250 - j)
+          p5.fill(255 - j*20, 170 + j*p5.random(10), 250 - j)
         } else{
           p5.fill(255)
         }
@@ -43,8 +50,8 @@ function GridDataB(props) {
     p5.background(255, 255, 255);
     p5.stroke(100, 100, 255);
     p5.fill(230);
-    grid(p5, 20, 20, 20, false);
-    grid(p5, 20, 8, 20, true);
+    grid(p5, 16, 20, 20, false);
+    grid(p5, 16, 8, 20, true);
 
     //   p5.rect(xPos + i, yPos + j, 20, 20);
   };

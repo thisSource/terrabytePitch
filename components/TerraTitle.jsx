@@ -6,24 +6,29 @@ const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
   ssr: false
 });
 function TerraTitle(props){
-  // Will only render on client-side
+  let orgWidth = 1670
+  let widthAdjustor;
   let movers = [];
   let attractor;
 
+
+
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+    widthAdjustor = p5.windowWidth / orgWidth
+    let size = 300 * widthAdjustor
 
     for (let i = 0; i < 3; i++) {
-        let x = p5.random(p5.width / 2 - 200, p5.width / 2 + 200);
-        let y = p5.random(p5.height / 2 - 200, p5.height / 2 + 200);
-        let m = p5.random(50, 150);
-        movers[i] = new Mover(p5, x, y, m);
+        let x = p5.random(p5.width / 2 - size, p5.width / 2 + size);
+        let y = p5.random(p5.height / 2 - size, p5.height / 2 + size);
+        let m = p5.random(10, 150);
+        movers[i] = new Mover(p5, x, y, m, widthAdjustor);
       }
-      attractor = new Attractor(p5, p5.width / 2, p5.height / 2, 50);
+      attractor = new Attractor(p5, p5.width / 2, p5.height / 2, 500);
   };
   
   const draw = (p5) => {
-    p5.background(150, 150, 150, 0.1);
+    p5.background(255, 255, 255,0.1);
  
 
     for (let mover of movers) {
@@ -57,13 +62,13 @@ function TerraTitle(props){
   }
 
 class Mover {
-    constructor(p5, x, y, m) {
+    constructor(p5, x, y, m, scaler) {
       this.pos = p5.createVector(x, y);
       this.vel = window.p5.Vector.random2D();
       this.vel.mult(3);
       this.acc = p5.createVector(0, 0);
       this.mass = m;
-      this.r = p5.sqrt(this.mass) * 0.5   ;
+      this.r = p5.sqrt(this.mass) * scaler;
   
       this.angle = 0;
       this.angleV = 0;
@@ -71,7 +76,7 @@ class Mover {
     }
   
     applyForce(force) {
-      let f = window.p5.Vector.div(force, this.mass);
+      let f = window.p5.Vector.div(force, this.mass + 500);
       this.acc.add(f);
     }
     update(p5) {
@@ -86,7 +91,7 @@ class Mover {
   
     show(p5) {
       p5.push();
-      p5.translate(this.pos.x, this.pos.y);
+      p5.translate(this.pos.x, this.pos.y-100);
       p5.rotate(this.angle);
       p5.noStroke()
   

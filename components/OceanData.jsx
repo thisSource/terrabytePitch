@@ -17,6 +17,8 @@ let mySound;
 let ocean, oceanB, oceanC, oceanD, oceanE;
 let cnv;
 
+let orgWidth = 1670
+let widthAdjustor;
 
 const preload = (p5) => {
   p5.soundFormats("mp3", "ogg", "wav");
@@ -25,19 +27,15 @@ const preload = (p5) => {
 
 const setup = (p5, canvasParentRef) => {
  cnv = p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+ widthAdjustor = p5.windowWidth / orgWidth
 
   // p5, xPos, yPos, xSpeed, ySpeed, radius, r, g, b
 
-
-  ocean = new Ocean(p5, p5.width /2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),168 * 1, 140, 10, 250)
-  oceanB = new Ocean(p5, p5.width /2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),85 * 1, 40, 120, 200)
-  oceanC = new Ocean(p5, p5.width /2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),71 * 1, 40, 230, 155)
-  oceanD = new Ocean(p5, p5.width /2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),21 * 1, 40, 10, 200)
-  oceanE = new Ocean(p5, p5.width /2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),15 * 1, 200, 90, 200)
-
-
-
-
+  ocean = new Ocean(p5, p5.width /2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),168 * 2 * widthAdjustor, 140, 10, 250)
+  oceanB = new Ocean(p5, p5.width /2 * 1.2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),85 * 2 * widthAdjustor, 40, 120, 200)
+  oceanC = new Ocean(p5, p5.width /2 * 0.9,p5.height/2 *0.7, p5.random(-0.2,0.2),p5.random(-0.2,0.2),71 * 2 * widthAdjustor, 40, 230, 155)
+  oceanD = new Ocean(p5, p5.width /2* 0.4 ,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),21 * 2 * widthAdjustor, 40, 10, 200)
+  oceanE = new Ocean(p5, p5.width /2 * 1.3,p5.height/2 * 1.3, p5.random(-0.2,0.2),p5.random(-0.2,0.2),15 * 2 * widthAdjustor, 200, 90, 200)
 };
 
 
@@ -47,7 +45,7 @@ const mousePressed = (p5) => {
 
 
 const draw = (p5) => {
-  p5.background(220);
+  p5.background(255);
 
   ocean.isOver(p5, "Liquid available asset")
   ocean.update(p5)
@@ -136,7 +134,7 @@ class Ocean {
   display(p5) {
     p5.noStroke();
     // p5.stroke(100)
-    p5.fill(this.r,this.g,this.b, 30);
+    p5.fill(this.r,this.g,this.b, 50);
     p5.push()
     p5.translate(this.pos.x += this.vel.x, this.pos.y += this.vel.y);
 

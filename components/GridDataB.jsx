@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const GridDataSketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
   ssr: false
 });
-function GridData(props) {
+function GridDataB(props) {
   // Will only render on client-side
 
   let xPos;
@@ -43,9 +43,9 @@ function GridData(props) {
     //p5, xPos,yPos, colsA, rowsA, lengthA
     grid(p5, 10, 10, 20)
 
-    p5.fill(200,200,255)
+    p5.fill(200,250,235)
     //p5, xPos,yPos, colsA, rowsA, lengthA
-     grid(p5, 10, 8, 20)
+     grid(p5, 2, 2, 20)
   };
 
   return (
@@ -56,4 +56,4 @@ function GridData(props) {
 }
 
 
-export default GridData;
+export default GridDataB;

@@ -6,7 +6,8 @@ const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
   ssr: false
 });
 function FundSavers(props) {
-  // Will only render on client-side
+  let orgWidth = 1670
+  let widthAdjustor;
   const stats = [
     270307, 283913, 223202, 258620, 278990, 305379, 308094, 398571, 425326,
     400532, 400603, 361485, 306229, 328279, 260008, 302060, 291598, 230166,
@@ -37,6 +38,8 @@ function FundSavers(props) {
     cnv = p5
       .createCanvas(p5.windowWidth, p5.windowHeight)
       .parent(canvasParentRef);
+      widthAdjustor = p5.windowWidth / orgWidth
+
   };
 
   const draw = (p5) => {
@@ -62,9 +65,7 @@ function FundSavers(props) {
         });
 
 
-        let currentWidth = p5.width
-
-        let lineWidth = 19
+        let lineWidth = 19*widthAdjustor
 
 
         if (isOn === true) {
