@@ -61,11 +61,11 @@ function GridDataFloater(props) {
   
     p5.beginShape();
     let xOff = 0;
-    for (let x = 670; x <= 970; x += 15) {
+    for (let x = p5.width/4; x <= p5.width - p5.width/4; x += 15) {
 
       p5.stroke(10, 120, 250);
 
-      let y = p5.map(p5.noise(xOff, yOff), 0, 1, 70, 150);
+      let y = p5.map(p5.noise(xOff, yOff), 0, 1, 170, 260);
       p5.vertex(x, y);
       // Increment x dimension for noise
       xOff += 0.01 + level;
@@ -81,7 +81,7 @@ function GridDataFloater(props) {
     p5.background(255, 255, 255);
     p5.stroke(100, 200, 255);
     p5.fill(230);
-    grid(p5, 16, 20, 20, false);
+    grid(p5, 15, 15, 20, false);
     showSurf(p5, 0.05)
     //   p5.rect(xPos + i, yPos + j, 20, 20);
   };
