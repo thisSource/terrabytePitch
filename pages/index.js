@@ -7,6 +7,8 @@ import OceanData from "../components/OceanData";
 import GridDataB from "../components/GridDataB";
 import BouncingBalls from "../components/BouncingBalls";
 import GridDataFloater from "../components/GridDataFloater";
+import LineModel from "../components/LineModel";
+import Model from "../components/Model";
 
 
 const Home = (props) => {
@@ -16,10 +18,19 @@ const Home = (props) => {
       <Header />
       <TerraTitle />
       <FundSavers />
-      {/* <div className="my-80 grid grid-cols-3">
+      <LineModel />
+      <div className="ml-5 mt-20 grid grid-cols-1 lg:grid-cols-2 justify-items-center	">
       <GridData />
+      <div className="w-96 mt-5 mb-20">
+      <p className="lg:text-lg text-base font-semibold text-gray-500">80 % of all Swedes have fund savings</p>
+      <p className="text-base text-gray-500">Orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      </div>
       <GridDataB />
-      </div> */}
+      <div className="w-96 mt-5 mb-20">
+      <p className="lg:text-lg text-gray-500 text-base font-semibold">20 % want to do good with their savings</p>
+      <p className="text-base text-gray-500">Proin id sagittis augue. Curabitur eu nisi ac leo lacinia hendrerit. In ut rhoncus erat. Donec ultricies placerat tortor eget suscipit. Sed interdum augue sed justo lacinia, at pharetra sapien gravida. Maecenas vel lorem mollis, dignissim quam id, fringilla lacus. Maecenas placerat dictum euismod. </p>
+    </div>
+      </div>
       <GridDataFloater />
       <OceanData />
     </div>

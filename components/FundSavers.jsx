@@ -21,7 +21,7 @@ function FundSavers(props) {
     504203, 525371, 440348, 504950, 527561, 537497, 584074, 463971, 558335,
     636644, 689450, 767398, 821650, 827969, 914509, 804958
   ];
-  const stocks = [260, 202, 310, 230, 200];
+
   let ratio = Math.max.apply(Math, stats) / 1000,
     l = stats.length,
     i;
@@ -52,7 +52,6 @@ function FundSavers(props) {
 
     p5.noStroke();
     p5.fill(255);
-    // p5.fill(100,200,255)
     for (let i = 0; i < stats.length; i++) {
       p5.stroke(100 - i, 100 + i, 255 - i);
 
@@ -71,18 +70,18 @@ function FundSavers(props) {
 
         if (isOn === true) {
           p5.strokeWeight(0.2);
-          p5.line(i * lineWidth, stats[i] + 600, p5.mouseX, p5.mouseY);
+          p5.line(i * lineWidth, stats[i] + p5.height, p5.mouseX, p5.mouseY);
           p5.ellipse(p5.mouseX, p5.mouseY,10)
         } else {
-          p5.strokeWeight(1);
-          p5.line(i * lineWidth, stats[i] + 600, (i + 5) * lineWidth, stats[i + 5] + 600);
+          p5.strokeWeight(0.8);
+          p5.line(i * lineWidth, stats[i] + p5.height, (i + 3) * lineWidth, stats[i + 3] + p5.height);
         }
-      p5.strokeWeight(2);
-      p5.ellipse(i * lineWidth, stats[i] + 600, 10);
+      p5.strokeWeight(1);
+      p5.ellipse(i * lineWidth, stats[i] + p5.height, 10);
     }
     p5.fill(255);
 
-    // p5.rect(0, p5.height-20, p5.width, p5.height-20)
+    p5.rect(0, p5.height-20, p5.width, p5.height-20)
   };
 
   

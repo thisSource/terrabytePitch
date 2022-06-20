@@ -14,8 +14,12 @@ function GridData(props) {
   let gridLength = 20
   let orgWidth = 1670
   let widthAdjustor;
+
+  let squares = 10
+  let sidelength = 20
+
   const setup = (p5, canvasParentRef) => {
-    p5.createCanvas(p5.windowWidth/2, p5.windowHeight/2).parent(canvasParentRef);
+    p5.createCanvas(squares * sidelength, squares * sidelength).parent(canvasParentRef);
     widthAdjustor = p5.windowWidth / orgWidth
       gridLength = gridLength * widthAdjustor
   };
@@ -24,8 +28,11 @@ function GridData(props) {
     p5.stroke(0);
     p5.strokeWeight(0.2);
     // p5.noFill();
-    xPos = p5.width/2 - colsA/2  * lengthA 
-    yPos = p5.height/2 - rowsA * lengthA
+    // xPos = p5.width/2 - colsA/2  * lengthA 
+    // yPos = p5.height/2 - rowsA * lengthA
+
+    xPos = 0
+    yPos = 0
 
     p5.push()
     for (let i = 0; i < colsA; i++) {
@@ -41,11 +48,11 @@ function GridData(props) {
     p5.background(255, 255, 255);
     p5.fill(220)
     //p5, xPos,yPos, colsA, rowsA, lengthA
-    grid(p5, 10, 10, 20)
+    grid(p5, squares, 10, sidelength)
 
     p5.fill(200,200,255)
     //p5, xPos,yPos, colsA, rowsA, lengthA
-     grid(p5, 10, 8, 20)
+     grid(p5, squares, 8, sidelength)
   };
 
   return (

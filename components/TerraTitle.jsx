@@ -16,9 +16,9 @@ function TerraTitle(props){
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     widthAdjustor = p5.windowWidth / orgWidth
-    let size = 300 * widthAdjustor
+    let size = 270 * widthAdjustor
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
         let x = p5.random(p5.width / 2 - size, p5.width / 2 + size);
         let y = p5.random(p5.height / 2 - size, p5.height / 2 + size);
         let m = p5.random(10, 150);
@@ -37,7 +37,7 @@ function TerraTitle(props){
       attractor.attract(p5, mover);
     }
 
-    // p5.rect(0, p5.height-20, p5.width, p5.height-20)
+    p5.rect(0, p5.height-20, p5.width, p5.height-20)
   };
   class Attractor {
     constructor(p5, x, y, m) {
