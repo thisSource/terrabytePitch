@@ -2,13 +2,10 @@ import TerraTitle from "../components/TerraTitle";
 import FundSavers from "../components/FundSavers";
 import GridData from "../components/GridData";
 import Header from "../components/Header";
-import GridDataC from "../components/GridData copy";
 import OceanData from "../components/OceanData";
 import GridDataB from "../components/GridDataB";
-import BouncingBalls from "../components/BouncingBalls";
 import GridDataFloater from "../components/GridDataFloater";
 import LineModel from "../components/LineModel";
-import Model from "../components/Model";
 
 
 const Home = (props) => {
