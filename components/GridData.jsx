@@ -50,7 +50,7 @@ function GridData(props) {
     //p5, xPos,yPos, colsA, rowsA, lengthA
     grid(p5, squares, 10, sidelength)
 
-    p5.fill(200,200,255)
+    p5.fill(162, 137, 240)
     //p5, xPos,yPos, colsA, rowsA, lengthA
      grid(p5, squares, 8, sidelength)
   };

@@ -80,9 +80,9 @@ function LineModel(props) {
       
     }
 
-    p5.strokeWeight(3)
+    // p5.strokeWeight(3)
 
-    p5.line(0,p5.height,p5.width,p5.height )
+    // p5.line(0,p5.height,p5.width,p5.height )
   };
 
   function setIsOn() {

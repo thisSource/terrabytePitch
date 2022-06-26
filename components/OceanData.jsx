@@ -32,10 +32,10 @@ const setup = (p5, canvasParentRef) => {
   // p5, xPos, yPos, xSpeed, ySpeed, radius, r, g, b
 
   ocean = new Ocean(p5, p5.width /2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),168 * 2 * widthAdjustor, 10, 10, 250)
-  oceanB = new Ocean(p5, p5.width /2 * 1.2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),85 * 2 * widthAdjustor, 40, 120, 200)
-  oceanC = new Ocean(p5, p5.width /2 * 0.9,p5.height/2 *0.7, p5.random(-0.2,0.2),p5.random(-0.2,0.2),71 * 2 * widthAdjustor, 40, 130, 155)
+  oceanB = new Ocean(p5, p5.width /2 * 1.2,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),85 * 2 * widthAdjustor, 120, 255, 194)
+  oceanC = new Ocean(p5, p5.width /2 * 0.9,p5.height/2 *0.7, p5.random(-0.2,0.2),p5.random(-0.2,0.2),71 * 2 * widthAdjustor, 162, 137, 240)
   oceanD = new Ocean(p5, p5.width /2* 0.4 ,p5.height/2, p5.random(-0.2,0.2),p5.random(-0.2,0.2),21 * 2 * widthAdjustor, 40, 10, 200)
-  oceanE = new Ocean(p5, p5.width /2 * 1.3,p5.height/2 * 1.3, p5.random(-0.2,0.2),p5.random(-0.2,0.2),15 * 2 * widthAdjustor, 100, 90, 200)
+  oceanE = new Ocean(p5, p5.width /2 * 1.3,p5.height/2 * 1.3, p5.random(-0.2,0.2),p5.random(-0.2,0.2),15 * 2 * widthAdjustor, 120, 220, 194)
 };
 
 

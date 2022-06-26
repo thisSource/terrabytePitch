@@ -63,7 +63,7 @@ function GridDataFloater(props) {
     let xOff = 0;
     for (let x = p5.width/4; x <= p5.width - p5.width/4; x += 15) {
 
-      p5.stroke(10, 120, 250);
+      p5.stroke(112, 137, 255);
 
       let y = p5.map(p5.noise(xOff, yOff), 0, 1, 170, 260);
       p5.vertex(x, y);
@@ -79,7 +79,7 @@ function GridDataFloater(props) {
 
   const draw = (p5) => {
     p5.background(255, 255, 255);
-    p5.stroke(100, 200, 255);
+    p5.stroke(120, 220, 194);
     p5.fill(230);
     grid(p5, 15, 15, 20, false);
     showSurf(p5, 0.05)

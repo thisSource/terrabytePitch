@@ -79,9 +79,8 @@ function FundSavers(props) {
       p5.strokeWeight(1);
       p5.ellipse(i * lineWidth, stats[i] + p5.height, 10);
     }
-    p5.fill(255);
-
-    p5.rect(0, p5.height-20, p5.width, p5.height-20)
+    // p5.fill(255);
+    // p5.rect(0, p5.height-20, p5.width, p5.height-20)
   };
 
   
