@@ -19,11 +19,13 @@ const Home = (props) => {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <GridData />
           <div className="w-96 mb-20">
-            <p className="lg:text-base font-semibold text-gray-500">
+            <p className="lg:text-base text-gray-500 text-sm font-semibold">
             rgb: (162, 137, 240)
             </p>
             <p className="text-sm text-gray-500">
-              
+              font: Nunito 
+            </p>
+            <p className="text-sm text-gray-500">   
               Orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
