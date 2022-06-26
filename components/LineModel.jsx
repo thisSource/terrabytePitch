@@ -34,7 +34,7 @@ function LineModel(props) {
 
 
     p5.strokeWeight(0.5)
-    p5.stroke(255,100,0)
+    p5.stroke(120, 220, 194)
     if (isOn === true) {
       p5.line(p5.width/2, p5.height - 100, p5.mouseX, p5.mouseY)
       p5.line(p5.width/2 - 30, p5.height - 180, p5.mouseX, p5.mouseY)
@@ -44,7 +44,7 @@ function LineModel(props) {
     }
     p5.strokeWeight(1.5)
 
-    p5.fill(255,240,230)
+    p5.fill(100,250, 200, 20)
     p5.ellipse(p5.width/2, p5.height - 100, 60)
     p5.ellipse(p5.width/2 - 30, p5.height - 180, 40)
     p5.ellipse(p5.width/2 + 20, p5.height - 170, 40)
@@ -65,7 +65,7 @@ function LineModel(props) {
         }
       });
 
-      let lineWidth = 50 * widthAdjustor;
+      let lineWidth = 10 * widthAdjustor;
 
       if (isOn === true) {
         p5.strokeWeight(0.2);

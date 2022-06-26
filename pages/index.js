@@ -7,20 +7,25 @@ import GridDataB from "../components/GridDataB";
 import GridDataFloater from "../components/GridDataFloater";
 import LineModel from "../components/LineModel";
 import StillLogo from "../components/StillLogo";
+import TerraGrid from "../components/TerraGrid";
 
 const Home = (props) => {
   // Will only render on client-side
   return (
     <div className="font-Nunito">
       <Header />
-      <div className="mt-10 grid-cols-1 grid lg:grid-cols-2 justify-items-center">
+      <TerraGrid />
+      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center">
         <TerraTitle />
         {/* <StillLogo /> */}
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 justify-center">
           <GridData />
-          <div className="w-96 mb-20">
+          <div className="w-96 mt-5 mb-20">
             <p className="lg:text-base text-gray-500 text-sm font-semibold">
-            rgb: (162, 137, 240)
+           rgb(162, 137, 240) purpule
+           <br/>
+         rgb(220, 220, 220) gray
+
             </p>
             <p className="text-sm text-gray-500">
               font: Nunito 
@@ -35,7 +40,7 @@ const Home = (props) => {
           <GridDataB />
           <div className="w-96 mt-5 mb-20">
             <p className="lg:text-base text-gray-500 text-sm font-semibold">
-              rgb: (120, 220, 194)
+              rgb: (120, 220, 194) green
             </p>
             <p className="text-sm  text-gray-500">
               Proin id sagittis augue. Curabitur eu nisi ac leo lacinia
@@ -47,6 +52,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
+      {/* <LineModel /> */}
 
       <FundSavers />
 
