@@ -13,7 +13,7 @@ const Home = (props) => {
   return (
     <div className="font-Nunito">
       <Header />
-      <div className="mt-10 grid grid-cols-2 justify-items-center">
+      <div className="mt-10 grid-cols-1 grid lg:grid-cols-2 justify-items-center">
         <TerraTitle />
         {/* <StillLogo /> */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
