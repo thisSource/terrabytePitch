@@ -14,7 +14,6 @@ const Home = (props) => {
   return (
     <div className="font-Nunito">
       <Header />
-      <TerraGrid />
       <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center">
         <TerraTitle />
         {/* <StillLogo /> */}
@@ -55,9 +54,12 @@ const Home = (props) => {
       {/* <LineModel /> */}
 
       <FundSavers />
-
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
+      <TerraGrid />
       <GridDataFloater />
+      </div>
       <OceanData />
+
     </div>
   );
 };

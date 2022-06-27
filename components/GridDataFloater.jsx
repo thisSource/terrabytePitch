@@ -19,12 +19,16 @@ function GridDataFloater(props) {
 
   let gravity;
 
+  let squares = 15
+  let sidelength = 20
+
   const setup = (p5, canvasParentRef) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
+    p5.createCanvas(squares * sidelength, squares * sidelength * 3).parent(canvasParentRef);
     gravity = p5.createVector(0.03, 0.05);
 
     xPos = p5.width / 2;
     yPos = p5.height / 2;
+    
     widthAdjustor = p5.windowWidth / orgWidth;
     gridLength = gridLength * widthAdjustor;
   };
@@ -35,6 +39,7 @@ function GridDataFloater(props) {
     // p5.noFill();
     xPos = p5.width / 2 - (colsA / 2) * lengthA;
     yPos = p5.height / 2 - rowsA * lengthA;
+
 
     p5.push();
     // p5.translate(p5.width/2, p5.height/2)
@@ -76,7 +81,7 @@ function GridDataFloater(props) {
     p5.background(255, 255, 255);
     p5.stroke(120, 220, 194);
     p5.fill(230);
-    grid(p5, 15, 15, 20, false);
+    grid(p5, squares, squares, sidelength, false);
     showSurf(p5, 0.05);
     //   p5.rect(xPos + i, yPos + j, 20, 20);
   };

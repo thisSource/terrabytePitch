@@ -6,7 +6,7 @@ const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
   ssr: false
 });
 function TerraGrid(props){
-  let orgWidth = 1670
+  let orgWidth = 1670 / 2
   let widthAdjustor;
   let movers = [];
   let attractor;
@@ -18,13 +18,14 @@ function TerraGrid(props){
 
   let gridLength = 20;
 
-
+  let squares = 15
+  let sidelength = 20
 
 
   const setup = (p5, canvasParentRef) => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    widthAdjustor = p5.windowWidth / orgWidth
-    let size = 170 * widthAdjustor
+    p5.createCanvas(squares * sidelength *1.5, squares * sidelength * 3).parent(canvasParentRef);
+    widthAdjustor = p5.width / orgWidth
+    let size = 50 / widthAdjustor
     xPos = p5.width / 2;
     yPos = p5.height / 2;
 
@@ -42,7 +43,7 @@ function TerraGrid(props){
     p5.strokeWeight(0.2);
     p5.fill(255);
     // p5.noFill();
-    xPos = p5.width / 2 - (colsA / 2) * lengthA;
+    xPos = (p5.width / 2 - (colsA / 2) * lengthA);
     yPos = p5.height / 2 - rowsA * lengthA;
 
     p5.push();
@@ -64,7 +65,7 @@ function TerraGrid(props){
     p5.background(255, 255, 255);
  
   
-    grid(p5, 20, 20, 20, false);
+    grid(p5, squares, squares, sidelength, false);
 
     for (let mover of movers) {
       mover.update(p5);
@@ -120,7 +121,7 @@ class Mover {
       this.vel.add(this.acc);
       this.pos.add(this.vel);
   
-      this.angleA = this.acc.x / 500;
+      this.angleA = this.acc.x / 1000;
       this.angleV += this.angleA;
       this.angle += this.angleV;
       this.acc.set(0, 0);
@@ -133,12 +134,12 @@ class Mover {
       p5.noStroke()
   
       p5.fill(150,100,255);
-      p5.ellipse(0, 0, this.r * 3);
+      p5.ellipse(0, 0, this.r * 4);
       p5.fill(150,255,150,200);
-      p5.ellipse(0, 0, this.r * 2);
+      p5.ellipse(0, 0, this.r * 3);
     //   p5.line(0, 0, this.r, 0);
     p5.fill(0,100,255,50);
-    p5.ellipse(0, 0, this.r * 1);
+    p5.ellipse(0, 0, this.r * 3);
       p5.pop();
     }
   }
